@@ -1,0 +1,30 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0
+rootdir: /home/claude/pyanalyzer
+configfile: pytest.ini
+testpaths: tests
+plugins: cov-7.1.0
+collected 40 items
+
+tests/test_cli.py ........                                               [ 20%]
+tests/test_complexity.py .......                                         [ 37%]
+tests/test_duplicates.py ......                                          [ 52%]
+tests/test_metrics.py ....                                               [ 62%]
+tests/test_naming.py ........                                            [ 82%]
+tests/test_unused_vars.py .......                                        [100%]
+
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+
+Name                      Stmts   Miss  Cover   Missing
+-------------------------------------------------------
+analyzer/__init__.py          1      0   100%
+analyzer/cli.py              68      7    90%   38-39, 110-113, 122
+analyzer/complexity.py       56     10    82%   42-43, 50-51, 59-60, 63-64, 102-107
+analyzer/duplicates.py       42      0   100%
+analyzer/metrics.py          26      0   100%
+analyzer/naming.py           43      2    95%   70-71
+analyzer/unused_vars.py      50      2    96%   78-79
+-------------------------------------------------------
+TOTAL                       286     21    93%
+============================== 40 passed in 0.19s ==============================
