@@ -12,6 +12,8 @@ Two strategies are combined:
    are not whole functions.
 """
 
+from __future__ import annotations
+
 import ast
 from dataclasses import dataclass, field
 

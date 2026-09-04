@@ -8,6 +8,8 @@ and augmented-assignment targets (`x += 1`, which are also a read) are
 excluded to keep the signal low-noise.
 """
 
+from __future__ import annotations
+
 import ast
 from dataclasses import dataclass
 

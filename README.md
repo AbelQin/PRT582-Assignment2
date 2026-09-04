@@ -37,6 +37,13 @@ python -m pytest --cov=analyzer --cov-report=term-missing
 40 tests, 93% statement coverage as of the last run (see
 `test_run_output.txt` / `htmlcov/index.html` for the full report).
 
+## Compatibility
+
+Works on Python 3.8+. Modules use `from __future__ import annotations`
+so that modern type-hint syntax (`list[str]`, `X | Y`) is safe on
+older interpreters that would otherwise raise a `TypeError` when the
+function is defined.
+
 ## Project layout
 
 ```

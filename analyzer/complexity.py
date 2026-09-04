@@ -8,6 +8,8 @@ boolean operators (and/or) used as short-circuit branches,
 ternary (conditional) expressions, and comprehension "if" clauses.
 """
 
+from __future__ import annotations
+
 import ast
 from dataclasses import dataclass, field
 

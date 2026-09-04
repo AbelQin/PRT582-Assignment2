@@ -1,17 +1,52 @@
 ============================= test session starts ==============================
-platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
 rootdir: /home/claude/pyanalyzer
 configfile: pytest.ini
 testpaths: tests
 plugins: cov-7.1.0
-collected 40 items
+collecting ... collected 40 items
 
-tests/test_cli.py ........                                               [ 20%]
-tests/test_complexity.py .......                                         [ 37%]
-tests/test_duplicates.py ......                                          [ 52%]
-tests/test_metrics.py ....                                               [ 62%]
-tests/test_naming.py ........                                            [ 82%]
-tests/test_unused_vars.py .......                                        [100%]
+tests/test_cli.py::test_analyse_file_normal_case PASSED                  [  2%]
+tests/test_cli.py::test_analyse_file_missing_file_raises PASSED          [  5%]
+tests/test_cli.py::test_analyse_file_invalid_syntax_raises_analysis_error PASSED [  7%]
+tests/test_cli.py::test_format_report_includes_high_complexity_flag PASSED [ 10%]
+tests/test_cli.py::test_main_returns_zero_on_success PASSED              [ 12%]
+tests/test_cli.py::test_main_returns_nonzero_when_any_file_fails PASSED  [ 15%]
+tests/test_cli.py::test_format_report_lists_every_section PASSED         [ 17%]
+tests/test_cli.py::test_main_with_no_arguments_returns_usage_error PASSED [ 20%]
+tests/test_complexity.py::test_straight_line_function_has_complexity_one PASSED [ 22%]
+tests/test_complexity.py::test_single_if_adds_one PASSED                 [ 25%]
+tests/test_complexity.py::test_boundary_many_branches PASSED             [ 27%]
+tests/test_complexity.py::test_bool_ops_count_as_branches PASSED         [ 30%]
+tests/test_complexity.py::test_nested_function_reported_separately PASSED [ 32%]
+tests/test_complexity.py::test_empty_source_returns_no_functions PASSED  [ 35%]
+tests/test_complexity.py::test_invalid_syntax_raises_syntax_error PASSED [ 37%]
+tests/test_duplicates.py::test_identical_function_bodies_detected PASSED [ 40%]
+tests/test_duplicates.py::test_different_function_bodies_not_flagged PASSED [ 42%]
+tests/test_duplicates.py::test_single_function_no_duplicates PASSED      [ 45%]
+tests/test_duplicates.py::test_duplicate_line_block_detected PASSED      [ 47%]
+tests/test_duplicates.py::test_short_repeated_lines_below_threshold_not_flagged PASSED [ 50%]
+tests/test_duplicates.py::test_invalid_syntax_raises_syntax_error PASSED [ 52%]
+tests/test_metrics.py::test_basic_metrics_counts PASSED                  [ 55%]
+tests/test_metrics.py::test_average_and_max_complexity PASSED            [ 57%]
+tests/test_metrics.py::test_empty_file_boundary PASSED                   [ 60%]
+tests/test_metrics.py::test_invalid_syntax_raises_syntax_error PASSED    [ 62%]
+tests/test_naming.py::test_camelcase_function_flagged PASSED             [ 65%]
+tests/test_naming.py::test_snake_case_function_not_flagged PASSED        [ 67%]
+tests/test_naming.py::test_lowercase_class_flagged PASSED                [ 70%]
+tests/test_naming.py::test_pascalcase_class_not_flagged PASSED           [ 72%]
+tests/test_naming.py::test_camelcase_parameter_flagged PASSED            [ 75%]
+tests/test_naming.py::test_self_and_cls_never_flagged PASSED             [ 77%]
+tests/test_naming.py::test_underscore_prefixed_names_exempt PASSED       [ 80%]
+tests/test_naming.py::test_invalid_syntax_raises_syntax_error PASSED     [ 82%]
+tests/test_unused_vars.py::test_unused_variable_is_detected PASSED       [ 85%]
+tests/test_unused_vars.py::test_used_variable_not_flagged PASSED         [ 87%]
+tests/test_unused_vars.py::test_underscore_prefixed_variable_ignored PASSED [ 90%]
+tests/test_unused_vars.py::test_augmented_assignment_not_flagged PASSED  [ 92%]
+tests/test_unused_vars.py::test_variable_used_only_in_nested_function_not_flagged PASSED [ 95%]
+tests/test_unused_vars.py::test_multiple_unused_variables_all_reported PASSED [ 97%]
+tests/test_unused_vars.py::test_invalid_syntax_raises_syntax_error PASSED [100%]
 
 ================================ tests coverage ================================
 _______________ coverage: platform linux, python 3.12.3-final-0 ________________
@@ -19,12 +54,12 @@ _______________ coverage: platform linux, python 3.12.3-final-0 ________________
 Name                      Stmts   Miss  Cover   Missing
 -------------------------------------------------------
 analyzer/__init__.py          1      0   100%
-analyzer/cli.py              68      7    90%   38-39, 110-113, 122
-analyzer/complexity.py       56     10    82%   42-43, 50-51, 59-60, 63-64, 102-107
-analyzer/duplicates.py       42      0   100%
-analyzer/metrics.py          26      0   100%
-analyzer/naming.py           43      2    95%   70-71
-analyzer/unused_vars.py      50      2    96%   78-79
+analyzer/cli.py              69      7    90%   40-41, 112-115, 124
+analyzer/complexity.py       57     10    82%   44-45, 52-53, 61-62, 65-66, 104-109
+analyzer/duplicates.py       43      0   100%
+analyzer/metrics.py          27      0   100%
+analyzer/naming.py           44      2    95%   72-73
+analyzer/unused_vars.py      51      2    96%   80-81
 -------------------------------------------------------
-TOTAL                       286     21    93%
-============================== 40 passed in 0.19s ==============================
+TOTAL                       292     21    93%
+============================== 40 passed in 0.12s ==============================

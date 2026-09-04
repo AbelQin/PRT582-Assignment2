@@ -9,6 +9,8 @@ cannot be parsed (invalid Python syntax) are reported as errors and
 skipped, rather than crashing the whole run.
 """
 
+from __future__ import annotations
+
 import sys
 
 from analyzer.complexity import analyse_complexity

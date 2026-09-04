@@ -11,6 +11,8 @@ underscore already carries its own convention (privacy) and is not
 the target of this check.
 """
 
+from __future__ import annotations
+
 import ast
 import re
 from dataclasses import dataclass

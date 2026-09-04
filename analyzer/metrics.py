@@ -1,5 +1,7 @@
 """Aggregate code metrics for a Python source file."""
 
+from __future__ import annotations
+
 import ast
 from dataclasses import dataclass
 
